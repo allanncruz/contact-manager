@@ -1,4 +1,5 @@
 'use client'
+import axios from 'axios';
 import React, { useState } from 'react';
 
 const LoginForm: React.FC = () => {
@@ -7,6 +8,13 @@ const LoginForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3001/auth/login', { username: email, password });
+      console.log('Login successful:', response.data);
+      // Armazene o token JWT e redirecione o usuário
+    } catch (error) {
+      console.error('Login failed:', error);
+    }
   };
 
   return (
