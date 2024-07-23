@@ -1,9 +1,9 @@
-import Image from "next/image";
+import LoginPage from "./components/Auth/LoginPage";
 
 export default function Home() {
   return (
     <main>
-      Contact manage
+      <LoginPage />
     </main>
   );
 }
