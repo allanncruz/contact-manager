@@ -18,7 +18,7 @@ const LoginForm = () => {
       
       if (response.status === 200) {
         localStorage.setItem('access_token', response.data.access_token);
-        router.push('/private');
+        router.push('/users');
       }
     } catch (error) {
       console.error('Login failed:', error);
