@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { useRouter } from 'next/router';
+import AccordionItem from '../AccordionItem';
 
 interface LayoutProps {
   children: ReactNode;
@@ -22,14 +23,18 @@ const Layout = ({ children }: LayoutProps) => {
         <nav>
           <ul>
             <li>
-              <a href="/users" className="block px-4 py-2 hover:bg-blue-600">Usuários</a>
+              <a href="/home" className="block px-4 py-2 hover:bg-blue-600">Início</a>
             </li>
-            <li>
-              <a href="/groups" className="block px-4 py-2 hover:bg-blue-600">Grupos</a>
-            </li>
-            <li>
-              <a href="/contacts" className="block px-4 py-2 hover:bg-blue-600">Contatos</a>
-            </li>
+            <AccordionItem title="Grupos">
+              <ul>
+                <li>
+                  <a href="#" className="block px-4 py-2 hover:bg-blue-600">Criar</a>
+                </li>
+                <li>
+                  <a href="#" className="block px-4 py-2 hover:bg-blue-600">Listar</a>
+                </li>
+              </ul>
+            </AccordionItem>
             <li>
               <button onClick={handleLogout} className="w-full text-left block px-4 py-2 hover:bg-blue-600">Logout</button>
             </li>
